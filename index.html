@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Bank Sentral sebagai Regulator Sistem Pembayaran</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: #e5e7eb;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    padding: 60px;
+    height: 100vh;
+    animation: fadeIn 0.8s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 44px;
+    color: #38bdf8;
+}
+
+h2 {
+    font-size: 32px;
+    color: #7dd3fc;
+}
+
+p, li {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-top: 20px;
+}
+
+.highlight {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+.diagram {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.box {
+    background: #020617;
+    border: 2px solid #38bdf8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.nav {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+}
+
+button {
+    padding: 10px 22px;
+    font-size: 16px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active">
+    <h1>Bank Sentral sebagai Regulator<br>Sistem Pembayaran</h1>
+    <p>Presentasi Ekonomi</p>
+    <div class="diagram">
+        <div class="box">
+            <div class="icon">🏦</div>
+            Bank Sentral
+        </div>
+        <div class="box">
+            <div class="icon">💳</div>
+            Sistem Pembayaran
+        </div>
+        <div class="box">
+            <div class="icon">📈</div>
+            Stabilitas Ekonomi
+        </div>
+    </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+    <h2>Pengertian Bank Sentral</h2>
+    <p>
+        <span class="highlight">Bank Sentral</span> adalah lembaga negara
+        yang bertugas mengatur dan menjaga kestabilan moneter serta sistem keuangan.
+    </p>
+    <div class="box">
+        <div class="icon">🇮🇩</div>
+        Bank Indonesia (BI)
+    </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+    <h2>Apa itu Sistem Pembayaran?</h2>
+    <p>Sistem untuk memindahkan dana antar pihak.</p>
+    <ul>
+        <li>💵 Tunai</li>
+        <li>💳 Non Tunai</li>
+        <li>📱 Digital (QRIS, e-wallet)</li>
+    </ul>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+    <h2>Diagram Sistem Pembayaran</h2>
+    <div class="diagram">
+        <div class="box">
+            <div class="icon">👤</div>
+            Masyarakat
+        </div>
+        <div class="box">
+            <div class="icon">🏦</div>
+            Bank
+        </div>
+        <div class="box">
+            <div class="icon">⚖️</div>
+            Bank Sentral
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide">
+    <h2>Peran Bank Sentral</h2>
+    <ul>
+        <li>Menyusun kebijakan sistem pembayaran</li>
+        <li>Mengawasi transaksi</li>
+        <li>Menjaga keamanan & efisiensi</li>
+        <li>Melindungi konsumen</li>
+    </ul>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide">
+    <h2>Contoh di Indonesia</h2>
+    <div class="diagram">
+        <div class="box">
+            <div class="icon">📲</div>
+            QRIS
+        </div>
+        <div class="box">
+            <div class="icon">⚡</div>
+            BI-FAST
+        </div>
+        <div class="box">
+            <div class="icon">💰</div>
+            E-Money
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+    <h2>Kesimpulan</h2>
+    <p>
+        Bank Sentral memiliki peran penting sebagai
+        <span class="highlight">regulator sistem pembayaran</span>
+        agar transaksi aman, cepat, dan stabil.
+    </p>
+    <h2>Terima Kasih 🙏</h2>
+</div>
+
+<div class="nav">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+</div>
+
+<div class="footer">Presentasi Berbasis Website</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+function nextSlide() {
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+}
+
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+}
+</script>
+
+</body>
+</html>
